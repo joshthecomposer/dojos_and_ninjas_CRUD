@@ -1,5 +1,6 @@
 # Dojos and Ninjas CRUD
-This is a full stack CRUD app created for the Coding Dojo coding bootcamp
+This is a full stack CRUD app created for the Coding Dojo coding bootcamp.
+It involves the ability to update and edit within a relational database using one-to-many relationships.
 ### Objectives:
 * Create a new Flask project
 * Use dojos_and_ninjas_schema created in MySQL course
