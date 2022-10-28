@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>{{one_dojo.name}}</title>
+</head>
+<body>
+    <div class="container col-6 text-center my-5">
+        <h1>Dojo Number {{one_dojo.id}}</h1>
+        <p>Name: {{one_dojo.name}}</p>
+        <p>Created: {{one_dojo.created_at.strftime("%b %d %Y at %I:%M %p")}}</p>
+        <p>Updated: {{one_dojo.updated_at.strftime("%b %d %Y at %I:%M %p")}}</p>
+        <hr>
+        <h1>Associated Ninjas:</h1>
+        <table class="table table-striped">
+            <thead>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+                <th>Actions</th>
+            </thead>
+            <tbody>
+                {%for ninja in one_dojo.ninjas%}
+                <tr>
+                    <td>{{ninja['first_name']}}</td>
+                    <td>{{ninja['last_name']}}</td>
+                    <td>{{ninja['age']}}</td>
+                    <td><a href="/ninja/edit/{{ ninja['id'] }}">edit</a> | <a href="/ninja/delete/{{ ninja['id'] }}">delete</a></td>
+                </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+        <a href="/dojos" class="btn btn-secondary">Home</a>
+        <a href="/ninjas" class="btn btn-secondary">View/Add Ninjas</a>
+    </div>
+</body>
+</html>
