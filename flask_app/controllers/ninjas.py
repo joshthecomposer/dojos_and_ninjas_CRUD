@@ -1,4 +1,4 @@
-from flask import redirect, render_template, request, url_for
+from flask import redirect, render_template, request, url_for, session
 from flask_app.models.ninja import Ninja
 from flask_app.models.dojo import Dojo
 from flask_app import app
@@ -28,7 +28,7 @@ def delete(id):
     }
     
     Ninja.delete(data)
-    return redirect('/dojos')
+    return redirect('/dojos/' + str(session['current_dojo']))
 
 @app.route('/ninja/edit/<int:id>')
 def edit(id):
@@ -47,4 +47,4 @@ def update_ninja():
         'age' : request.form['age']
     }
     Ninja.update_ninja(data)
-    return redirect('/ninjas')
+    return redirect('/dojos/' + str(session['current_dojo']))

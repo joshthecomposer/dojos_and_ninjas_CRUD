@@ -8,6 +8,10 @@
     <title>Dojos</title>
 </head>
 <body>
+    <div class="container d-flex justify-content-end gap-3 col-10 my-5">
+        <a href="/dojos" class="btn btn-secondary">Home</a>
+        <a href="/ninjas" class="btn btn-secondary">Add Ninjas</a>
+    </div>
     <div class="container col-4 text-center my-5">
             <h1>Edit {{ one_ninja.first_name }}'s Data</h1>
             <form action="/update_ninja" method="POST">
@@ -26,7 +30,6 @@
                     <label for="name">Age:</label>
                     <input class="form-control" type="number" name="age" value="{{ one_ninja.age }}">
                     <input class="btn btn-secondary my-4" type="submit" value="Submit">
-                    <a href="/dojos" class="btn btn-secondary">Home</a>
                 </div>
             </form>
         </div>

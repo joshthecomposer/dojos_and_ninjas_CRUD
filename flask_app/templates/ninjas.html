@@ -8,31 +8,33 @@
     <title>Dojos</title>
 </head>
 <body>
-    <div class="container col-4 text-center my-5">
+    <div class="container d-flex justify-content-end gap-3 col-10 my-5">
+        <a href="/dojos" class="btn btn-secondary">Home</a>
+    </div>
+    <div class="container col-5 text-center my-5">
             <h1>Add A New Ninja</h1>
             <form action="/add_ninja" method="POST">
                 <div class="form-group">
-                    <label for="dojo">Select Dojo:</label>
+                    <label class="my-3"  for="dojo">Select Dojo:</label>
                     <select class="form-control" name="dojo_id">
                         {%for one_dojo in all_dojos%}
                         <option value="{{one_dojo.id}}">{{one_dojo.name}}</option>
                         {%endfor%}
                     </select>
-                    <label for="name">First Name:</label>
+                    <label class="my-3" for="name">First Name:</label>
                     <input class="form-control" type="text" name="first_name">
-                    <label for="name">Last Name:</label>
+                    <label class="my-3" for="name">Last Name:</label>
                     <input class="form-control" type="text" name="last_name">
-                    <label for="name">Age:</label>
+                    <label class="my-3" for="name">Age:</label>
                     <input class="form-control" type="number" name="age">
                     <input class="btn btn-secondary my-4" type="submit" value="Submit">
-                    <a href="/dojos" class="btn btn-secondary">Home</a>
                 </div>
             </form>
-            <hr>
-            <h1>All Ninjas</h1>
+            <!-- <hr>
+            <h1>All Ninjas</h1> -->
         </div>
     </div>
-    <div class="container col-6">
+    <!-- <div class="container col-6">
         <table class="table table-striped">
             <thead>
                 <th>ID</th>
@@ -51,6 +53,6 @@
                 {%endfor%}
             </tbody>
         </table>
-    </div>
+    </div> -->
 </body>
 </html>
